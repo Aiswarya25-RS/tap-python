@@ -1,5 +1,6 @@
+import json
+from pathlib import Path
 from datetime import datetime
-
 
 def rename_columns(
     row: dict[str, str],
@@ -37,3 +38,10 @@ def calculate_order_totals(
         totals[order_id] = totals.get(order_id, 0.0) + item_total
 
     return totals
+
+def load_column_mapping(
+    path: str | Path,
+) -> dict[str, dict[str, str]]:
+    """Load column-renaming rules from a JSON file."""
+    with open(path, "r", encoding="utf-8") as file:
+        return json.load(file)
