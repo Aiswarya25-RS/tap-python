@@ -1,0 +1,9 @@
+paths:
+  input_dir: olist
+  output_dir: output
+  log_dir: logs
+  manifest: output/manifest.json
+  column_mapping_json: config/column_mapping.json
+
+processing:
+  input_glob: "*.csv"
